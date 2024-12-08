@@ -1,6 +1,6 @@
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import React, { useEffect, useState } from "react";
-import "./footer.css";
+import '../StyleAbout/footer.scss'
 
 interface FooterMapProps {
   center?: [number, number];

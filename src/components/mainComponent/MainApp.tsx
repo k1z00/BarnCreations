@@ -1,6 +1,5 @@
 import React from "react";
 import InfoMain from "./AboutInfo/InfoMain";
-import "./media.scss";
 
 import AdvantagesMain from "./AboutAdvantages/AdvantagesMain";
 import GalleryMain from "./AboutGalleryHouses/GalleryMain";

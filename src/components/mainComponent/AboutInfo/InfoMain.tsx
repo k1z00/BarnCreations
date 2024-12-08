@@ -1,12 +1,13 @@
 import InfoApp from "./InfoApp";
-import './InfoStyle/info.css'
+import '../../StyleAbout/info.scss'
+import InfoImg from '@assets/photo/karkasnyj-dom-barnhaus-scaled.webp'
 
 
 const InfoMain: React.FC = () => {
   return (
     <div className="background-container">  
     <section className="section_info">
-    <img src="/photo/karkasnyj-dom-barnhaus-scaled.webp" alt="Barn House" className="background-image" />
+    <img src={InfoImg} alt="Barn House" className="background-image" />
       <InfoApp />
     </section>
   </div>

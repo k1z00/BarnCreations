@@ -1,5 +1,5 @@
 import ConditionsApp from "./ConditionsApp"
-import './ConditionsStyle/conditions.css'
+import '../../StyleAbout/conditions.scss'
 
 const ConditionsMain: React.FC = () => {
     return (  

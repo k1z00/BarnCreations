@@ -1,5 +1,6 @@
 .productsell_container {
   width: 70%;
+  height: 100%;
   position: relative;
   align-items: center;
  
@@ -86,7 +87,7 @@
 
 .button_pag {
   border: 0;
-  margin-top: 20px ;
+  margin-top: 5px ;
   margin-right: 15px;
   padding: 12px 15px;
   background-color: rgb(26, 25, 25);
@@ -105,7 +106,8 @@
   cursor: not-allowed; }
 
 .pagination {
-  margin-top: 10px;
+  
+
   display: flex;
   
 }

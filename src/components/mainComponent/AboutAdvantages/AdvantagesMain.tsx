@@ -1,6 +1,6 @@
 
 import AdvantagesApp from './AdvantagesApp';
-import './AdvantagesStyle/advantages.css';
+import '../../StyleAbout/advantages.scss';
 
 
 const AdvantagesMain: React.FC = () => {

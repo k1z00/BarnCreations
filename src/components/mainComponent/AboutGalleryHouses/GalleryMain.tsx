@@ -1,5 +1,5 @@
 import GalleryApp from "./GalleryApp"
-import "./GaleryStyle/gallery.css";
+import "../../StyleAbout/gallery.scss";
 
 const GalleryMain :React.FC = () => {
     return (

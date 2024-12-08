@@ -2,13 +2,13 @@ import FooterMap from "./FooterMap";
 import SocialLink from "./FooterSocialLink";
 
 const socialArray = [
-  { id: 1, href: "https://vk.com/id851485203", src: "/photo/vk.png" },
+  { id: 1, href: "https://vk.com/id851485203", src: "/src/assets/photo/vk.png" },
   {
     id: 2,
     href: "https://web.telegram.org/k/#@gftW21",
-    src: "/photo/telegram.png",
+    src: "/src/assets/photo/telegram.png",
   },
-  { id: 3, href: "https://www.instagram.com/", src: "/photo/instagram.png" },
+  { id: 3, href: "https://www.instagram.com/", src: "/src/assets/photo/instagram.png" },
 ];
 
 const FooterApp: React.FC = () => {

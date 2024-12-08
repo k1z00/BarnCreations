@@ -1,5 +1,5 @@
 import FooterApp from "./FooterApp"
-import './footer.css'
+import '../StyleAbout/footer.scss'
 
 const FooterMain: React.FC = () => {
     return(

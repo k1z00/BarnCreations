@@ -1,8 +1,8 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../index";
+import { useAppDispatch, useAppSelector } from "../../../index";
 import { setPriceRange, setCurrentPage } from "../../SliceShop";
 
-import CustomSlider from "../../../Custom/Slider/CustomSlider";
+import CustomSlider from "../../../Ui/UiSlider/CustomSlider";
 import "../../StyleSell/slideprice.scss";
 
 const PriceSlider: React.FC = () => {
@@ -26,7 +26,7 @@ const PriceSlider: React.FC = () => {
         />
         <div className="slider-output">
           <p>
-           Цена : ${priceRange[0]} - ${priceRange[1]}
+            Цена : ${priceRange[0]} - ${priceRange[1]}
           </p>
         </div>
       </div>

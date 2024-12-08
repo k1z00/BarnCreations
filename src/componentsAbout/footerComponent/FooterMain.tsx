@@ -1,12 +1,17 @@
-import FooterApp from "./FooterApp"
-import '../StyleAbout/footer.scss'
+import React, { RefObject } from "react";
+import FooterApp from "./FooterApp";
+import '../StyleAbout/footer.scss';
 
-const FooterMain: React.FC = () => {
-    return(
-<footer className="footer_main">
-<FooterApp/>
-</footer>
-    )
-}
+interface FooterMainProps {
+    targetBlockRef: RefObject<HTMLDivElement>;
+  }
 
-export default FooterMain
+const FooterMain: React.FC<FooterMainProps> = ({ targetBlockRef }) => {
+  return (
+    <footer ref={targetBlockRef} className="footer_main">
+      <FooterApp  />
+    </footer>
+  );
+};
+
+export default FooterMain;

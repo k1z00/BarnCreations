@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import barnReducer from "./SliceShop";
+import barnReducer from "./componentsSell/SliceShop";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
+import scrollReducer from "./componentsAbout/SliceAbout";
 
 const store = configureStore({
   reducer: {
     barn: barnReducer,
+    scroll: scrollReducer,
   },
 });
 

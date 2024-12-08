@@ -1,4 +1,4 @@
-import React from "react";
+import  React,{ useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainApp from "./componentsAbout/mainComponent/MainApp";
 import HeaderApp from "./componentsAbout/headComponent/HeadApp";
@@ -6,6 +6,9 @@ import FooterMain from "./componentsAbout/footerComponent/FooterMain";
 import SellApp from "./componentsSell/SellMain";
 
 const App: React.FC = () => {
+
+  const targetBlockRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <Router
       future={{
@@ -15,11 +18,12 @@ const App: React.FC = () => {
     >
       <HeaderApp />
       <Routes>
-        <Route path="/" element={<MainApp />}/>
+        <Route path="/" element={<MainApp targetBlockRef={targetBlockRef} />}/>
         <Route path="/sell" element={<SellApp />} />
       </Routes>
-      <FooterMain />
+      <FooterMain targetBlockRef={targetBlockRef}  />
     </Router>
+
   );
 };
 

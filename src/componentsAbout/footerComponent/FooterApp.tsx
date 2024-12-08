@@ -1,19 +1,17 @@
+import React from "react";
 import FooterMap from "./FooterMap";
 import SocialLink from "./FooterSocialLink";
 
 const socialArray = [
   { id: 1, href: "https://vk.com/id851485203", src: "/src/assets/photo/vk.png" },
-  {
-    id: 2,
-    href: "https://web.telegram.org/k/#@gftW21",
-    src: "/src/assets/photo/telegram.png",
-  },
+  { id: 2, href: "https://web.telegram.org/k/#@gftW21", src: "/src/assets/photo/telegram.png" },
   { id: 3, href: "https://www.instagram.com/", src: "/src/assets/photo/instagram.png" },
 ];
 
-const FooterApp: React.FC = () => {
+
+const FooterApp:React.FC  = () => {
   return (
-    <div className="footer_container">
+    <div  className="footer_container">
       <div className="footer_items">
         <div>
           <ContactInfo />

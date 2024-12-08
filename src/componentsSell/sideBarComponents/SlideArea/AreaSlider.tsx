@@ -1,8 +1,8 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../index";
+import { useAppDispatch, useAppSelector } from "../../../index";
 import { setArea, setCurrentPage } from "../../SliceShop";
 
-import CustomSlider from "../../../Custom/Slider/CustomSlider";
+import CustomSlider from "../../../Ui/UiSlider/CustomSlider";
 import "../../StyleSell/area.scss";
 
 const AreaSlider: React.FC = () => {

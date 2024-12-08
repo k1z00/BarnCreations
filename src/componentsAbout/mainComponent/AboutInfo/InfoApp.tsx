@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useAppDispatch, useAppSelector } from "../../../index";
+import { setShouldScrollToTarget } from "../../SliceAbout"
 
-const InfoApp: React.FC = () => {
+interface InfoAppProps {
+  targetBlockRef: React.RefObject<HTMLDivElement>;
+}
+
+
+
+const InfoApp: React.FC<InfoAppProps> = ({targetBlockRef}) => {
+  const dispatch = useAppDispatch();
+  const shouldScrollToTarget = useAppSelector((state) => state.scroll.shouldScrollToTarget);
+
+;
+
+  React.useEffect(() => {
+    if (shouldScrollToTarget && targetBlockRef.current) {
+      targetBlockRef.current.scrollIntoView({ behavior: 'smooth' });
+      dispatch(setShouldScrollToTarget(false));
+    }
+  }, [shouldScrollToTarget, dispatch]);
+
+  const handleScrollToTarget = () => {
+    dispatch(setShouldScrollToTarget(true));
+  };
+
+
   return (
     <div className="info_container">
       <div className="info_items">
@@ -17,10 +42,11 @@ const InfoApp: React.FC = () => {
           </p>
         </div>
         <div className="info_link">
-          <button className="info_link_button">Связь с нами</button>
+          <button onClick={handleScrollToTarget} className="info_link_button">Связь с нами</button>
         </div>
         <div></div>
       </div>
+    
     </div>
   );
 };

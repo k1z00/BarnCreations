@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../index";
+import { useAppDispatch, useAppSelector } from "../../index";
 import {
   fetchBarn,
   setCurrentPage,
@@ -10,7 +10,7 @@ import {
   setBedrooms,
 } from "../SliceShop"; // Импортируем все необходимые функции
 import Spinner from "./Spiner";
-import ButtonCustom from "../../Custom/Button/CustomButton";
+import ButtonCustom from "../../Ui/UiButton/CustomButton";
 import Modal from "./ModalSell/ModalSell";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
@@ -42,17 +42,17 @@ const ProductSell: React.FC = () => {
 
   useEffect(() => {
     // Восстановление фильтров из localStorage
-    const currentPage = localStorage.getItem('currentPage')
-    const priceRange = localStorage.getItem('priceRange')
-    const floors = localStorage.getItem('floors')
-    const area = localStorage.getItem('area')
-    const bedrooms = localStorage.getItem('bedrooms')
+    const currentPage = localStorage.getItem("currentPage");
+    const priceRange = localStorage.getItem("priceRange");
+    const floors = localStorage.getItem("floors");
+    const area = localStorage.getItem("area");
+    const bedrooms = localStorage.getItem("bedrooms");
 
-    if (currentPage) dispatch(setCurrentPage(Number(currentPage)))
-    if (priceRange) dispatch(setPriceRange(JSON.parse(priceRange)))
-    if (floors) dispatch(setFloors(Number(floors)))
-    if (area) dispatch(setArea(JSON.parse(area)))
-    if (bedrooms) dispatch(setBedrooms(Number(bedrooms)))
+    if (currentPage) dispatch(setCurrentPage(Number(currentPage)));
+    if (priceRange) dispatch(setPriceRange(JSON.parse(priceRange)));
+    if (floors) dispatch(setFloors(Number(floors)));
+    if (area) dispatch(setArea(JSON.parse(area)));
+    if (bedrooms) dispatch(setBedrooms(Number(bedrooms)));
   }, [dispatch]);
 
   useEffect(() => {
@@ -149,28 +149,28 @@ const ProductSell: React.FC = () => {
         title="Заявка на покупку"
         house={selectedHouse}
       />
-     
+
       <div className="productsell_info">
-      {isMobile && (
-        <>
-          <Button className="bntDraw" onClick={toggleDrawer(true)}>
-            Открыть фильтры
-          </Button>
-          <Drawer
-            anchor="left"
-            open={openDrawer}
-            onClose={toggleDrawer(false)}
-            PaperProps={{
-              style: {
-                width: "100%",
-                height: "100%",
-              },
-            }}
-          >
-            <DrawerList />
-          </Drawer>
-        </>
-      )}
+        {isMobile && (
+          <>
+            <Button className="bntDraw" onClick={toggleDrawer(true)}>
+              Открыть фильтры
+            </Button>
+            <Drawer
+              anchor="left"
+              open={openDrawer}
+              onClose={toggleDrawer(false)}
+              PaperProps={{
+                style: {
+                  width: "100%",
+                  height: "100%",
+                },
+              }}
+            >
+              <DrawerList />
+            </Drawer>
+          </>
+        )}
         <p className="productsell_text">
           Страница {currentPage} из {totalPages}
         </p>

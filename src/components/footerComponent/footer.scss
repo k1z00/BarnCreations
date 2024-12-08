@@ -1,0 +1,42 @@
+.footer_main{
+   background-color: #dedede;
+   height: 800px;
+   .footer_container{
+      display: flex;
+      width: 80%;
+      padding-top: 100px;
+      margin: auto;
+      position: relative;
+      align-items: center;
+      .footer_items{
+      width: 50%;
+      .footer_item_title{
+         color: black;
+         font-weight: 400;
+         margin-bottom: 70px;   
+      }
+      .footer_item_text{
+         color: black;
+         font-size: 18px;
+      }
+      
+      }
+      .footer_map{
+       flex: 1; // Позволяет элементу занимать оставшееся пространство
+       width: 50%;
+       background-color: #3498db;
+       box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
+      }
+   }
+
+}
+
+.footer_social{
+   width: 100px;
+   display: flex;
+  
+}
+.footer_social img{
+   width: 40px;
+   margin-right: 10px;
+}

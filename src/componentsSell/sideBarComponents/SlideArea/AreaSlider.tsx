@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../index";
 import { setArea, setCurrentPage } from "../../SliceShop";
 
 import CustomSlider from "../../../Custom/Slider/CustomSlider";
-import "./areaSlider.css";
+import "../../StyleSell/area.scss";
 
 const AreaSlider: React.FC = () => {
   const dispatch = useAppDispatch();

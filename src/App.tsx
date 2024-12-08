@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainApp from "./components/mainComponent/MainApp";
-import HeaderApp from "./components/headComponent/HeadApp";
-import FooterMain from "./components/footerComponent/FooterMain";
+import MainApp from "./componentsAbout/mainComponent/MainApp";
+import HeaderApp from "./componentsAbout/headComponent/HeadApp";
+import FooterMain from "./componentsAbout/footerComponent/FooterMain";
 import SellApp from "./componentsSell/SellMain";
 
 const App: React.FC = () => {

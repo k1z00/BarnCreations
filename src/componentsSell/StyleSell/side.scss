@@ -1,0 +1,31 @@
+// Переменные
+$sidebar-title-color: rgb(39, 39, 39);
+
+// Стили
+.sidebar_container {
+  width: 28%;
+  height: 80%;
+  margin-left: 20px;
+  margin-top: 30px;
+
+  .sidebar_title {
+    margin-bottom: 70px;
+    color: $sidebar-title-color;
+
+    h3 {
+      font-weight: 500;
+      font-size: 25px;
+    }
+  }
+}
+
+// Медиа-запросы
+@media (max-width: 1700px) {
+  .sidebar_container {
+    .sidebar_title {
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+}

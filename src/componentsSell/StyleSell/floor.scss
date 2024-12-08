@@ -1,0 +1,41 @@
+// Переменные
+$select-floors-bg: rgb(179, 179, 167);
+$select-floors-border: #ccc;
+
+// Стили
+.flors_container {
+  margin-bottom: 60px;
+}
+
+.label_flors {
+  margin-right: 10px;
+}
+
+.select_floors {
+  width: 15%;
+  height: 30px;
+  border: 1px solid $select-floors-border;
+  outline: none;
+  background-color: $select-floors-bg;
+  border-radius: 20px;
+  padding: 5px;
+  transition: border-color 0.3s;
+}
+
+// Медиа-запросы
+@media (max-width: 1700px) {
+  .label_flors {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .label_flors {
+    font-size: 13px;
+  }
+
+  .select_floors {
+    width: 25%;
+    height: 25px;
+  }
+}

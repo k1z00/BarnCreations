@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../index";
 import { setPriceRange, setCurrentPage } from "../../SliceShop";
 
 import CustomSlider from "../../../Custom/Slider/CustomSlider";
-import "./sliderprice.css";
+import "../../StyleSell/slideprice.scss";
 
 const PriceSlider: React.FC = () => {
   const dispatch = useAppDispatch();

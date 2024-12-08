@@ -1,5 +1,5 @@
 import React from 'react';
-import './productSell.css'
+import './../StyleSell/product.scss'
 
 const Spinner: React.FC = () => (
     <div className="spinner">

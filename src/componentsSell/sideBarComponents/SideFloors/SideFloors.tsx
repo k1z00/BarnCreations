@@ -1,8 +1,7 @@
 import { useAppSelector, useAppDispatch } from "../../index";
 import { useEffect } from "react";
 import { fetchBarn, setCurrentPage, setFloors } from '../../SliceShop';
-
-import './floors.css';
+import '../../StyleSell/floor.scss';
 
 const SideFloors: React.FC = () => {
     const { floors, currentPage, priceRange, area, bedrooms } = useAppSelector((state) => state.barn);

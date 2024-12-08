@@ -1,5 +1,5 @@
 import React from "react";
-import "./side.css";
+import "../StyleSell/side.scss";
 import PriceSlider from "./SliderPrice/PriceSlider";
 import SideFloors from './SideFloors/SideFloors'
 import AreaSlider from "./SlideArea/AreaSlider";

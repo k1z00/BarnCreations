@@ -26,5 +26,5 @@
     "src",
     "componentsSell/mainSellComponent",
     "componentsSell/SellMain.tsx"
-, "componentsSell/SellApp.tsx", "componentsSell/mainSellComponent/ProductSell.tsx"  ]
+, "componentsSell/SellApp.tsx", "componentsSell/mainSellComponent/ProductSell.tsx", "src/vite-env.d.ts"  ]
 }

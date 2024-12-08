@@ -1,6 +1,6 @@
 import ProductSell from "./mainSellComponent/ProductSell";
 import SideBar from "./sideBarComponents/SideBarApp";
-import "./sell.css";
+import "./StyleSell/sell.scss";
 
 const SellApp: React.FC = () => {
   return (

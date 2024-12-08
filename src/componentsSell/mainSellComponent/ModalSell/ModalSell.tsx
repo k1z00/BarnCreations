@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import "./modalsell.css";
+import "../../StyleSell/modal.scss";
 
 interface ModalProps {
   isOpen: boolean;

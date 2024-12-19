@@ -1,12 +1,11 @@
-import  React,{ useRef } from "react";
+import React, { useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainApp from "./componentsAbout/mainComponent/MainApp";
-import HeaderApp from "./componentsAbout/headComponent/HeadApp";
-import FooterMain from "./componentsAbout/footerComponent/FooterMain";
-import SellApp from "./componentsSell/SellMain";
+import AboutPage from "./pages/about-page/about-page";
+import HeaderApp from "./components/modules/moduels-about/ui/head-about/head-app";
+import FooterMain from "./components/modules/moduels-about/ui/footer-about/footer-main";
+import SellPage from "./pages/sell-page/sell-page";
 
 const App: React.FC = () => {
-
   const targetBlockRef = useRef<HTMLDivElement | null>(null);
 
   return (
@@ -18,12 +17,14 @@ const App: React.FC = () => {
     >
       <HeaderApp />
       <Routes>
-        <Route path="/" element={<MainApp targetBlockRef={targetBlockRef} />}/>
-        <Route path="/sell" element={<SellApp />} />
+        <Route
+          path="/"
+          element={<AboutPage targetBlockRef={targetBlockRef} />}
+        />
+        <Route path="/sell" element={<SellPage />} />
       </Routes>
-      <FooterMain targetBlockRef={targetBlockRef}  />
+      <FooterMain targetBlockRef={targetBlockRef} />
     </Router>
-
   );
 };
 

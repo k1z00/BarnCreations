@@ -175,9 +175,12 @@ const ProductSell: React.FC = () => {
           Страница {currentPage} из {totalPages}
         </p>
       </div>
-      {loading && <Spinner />}
       {error && <p>{error}</p>}
-      <div className="productsell_items">
+      {loading ? <Spinner/> : (
+    <>
+    
+    
+         <div className="productsell_items">
         {house.data.map((h) => (
           <div className="productsell_item" key={h.id}>
             <div className="productsell_item_info">
@@ -211,7 +214,10 @@ const ProductSell: React.FC = () => {
           Вперед
         </button>
       </div>
-    </div>
+       
+       </>
+      ) }
+      </div>
   );
 };
 

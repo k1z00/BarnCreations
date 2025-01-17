@@ -9,3 +9,7 @@ export interface House {
     bedrooms: number
 }
 
+export interface HouseModal {
+    title: string
+    price: number
+}

@@ -18,7 +18,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Filters from "../filter-mobail/FilterMobail"; // Импортируем новый компонент
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { House } from "../../../shared/types/types";
+import { HouseModal } from "../../../shared/types/types";
 
 
 
@@ -38,7 +38,7 @@ const ProductSell: React.FC = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedHouse, setSelectedHouse] = useState<House | null>();
+  const [selectedHouse, setSelectedHouse] = useState<HouseModal | null>();
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const isMobile = useMediaQuery("(max-width: 970px)");
@@ -58,7 +58,7 @@ const ProductSell: React.FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
- 
+
     const page = Number(searchParams.get("page")) || 1;
     const priceRangeFromUrl: [number, number] = [
       Number(searchParams.get("price_gte")) || priceRange[0],
@@ -71,14 +71,14 @@ const ProductSell: React.FC = () => {
     ];
     const bedroomsFromUrl = Number(searchParams.get("bedrooms")) || bedrooms;
 
-    
+
     dispatch(setCurrentPage(page));
     dispatch(setPriceRange(priceRangeFromUrl));
     dispatch(setFloors(floorsFromUrl));
     dispatch(setArea(areaFromUrl));
     dispatch(setBedrooms(bedroomsFromUrl));
 
-  
+
     dispatch(
       fetchBarn({
         page,
@@ -89,6 +89,10 @@ const ProductSell: React.FC = () => {
       })
     );
   }, [dispatch, searchParams]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   useEffect(() => {
     setSearchParams({
@@ -105,16 +109,18 @@ const ProductSell: React.FC = () => {
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       dispatch(setCurrentPage(currentPage + 1));
+
     }
   };
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
       dispatch(setCurrentPage(currentPage - 1));
+
     }
   };
 
-  const handleOpenModal = (house: House | null) => {
+  const handleOpenModal = (house: HouseModal) => {
     setSelectedHouse(house);
     setIsModalOpen(true);
   };
@@ -148,7 +154,7 @@ const ProductSell: React.FC = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         title="Заявка на покупку"
-        house={selectedHouse}
+        house={selectedHouse!}
       />
 
       <div className="productsell_info">
@@ -177,48 +183,48 @@ const ProductSell: React.FC = () => {
         </p>
       </div>
       {error && <p>{error}</p>}
-      {loading ? <Spinner/> : (
-    <>
-    
-    
-         <div className="productsell_items">
-        {house.data.map((h) => (
-          <div className="productsell_item" key={h.id}>
-            <div className="productsell_item_info">
-              <img className="productsell_item_img" src={h.src} alt={h.title} />
-              <h3>{h.title}</h3>
-              <p>{h.text}</p>
-              <p>Цена: {h.price}</p>
-            </div>
-            <ButtonCustom
-              className="productsell_item_button"
-              onClick={() => handleOpenModal(h)}
-            >
-              Оставить заявку
-            </ButtonCustom>
+      {loading ? <Spinner /> : (
+        <>
+
+
+          <div className="productsell_items">
+            {house.data.map((h) => (
+              <div className="productsell_item" key={h.id}>
+                <div className="productsell_item_info">
+                  <img className="productsell_item_img" src={h.src} alt={h.title} />
+                  <h3>{h.title}</h3>
+                  <p>{h.text}</p>
+                  <p>Цена: {h.price}</p>
+                </div>
+                <ButtonCustom
+                  className="productsell_item_button"
+                  onClick={() => handleOpenModal(h)}
+                >
+                  Оставить заявку
+                </ButtonCustom>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="pagination">
-        <button
-          className="button_pag"
-          onClick={handlePrevPage}
-          disabled={loading || currentPage === 1}
-        >
-          Назад
-        </button>
-        <button
-          className="button_pag"
-          onClick={handleNextPage}
-          disabled={loading || currentPage === totalPages}
-        >
-          Вперед
-        </button>
-      </div>
-       
-       </>
-      ) }
-      </div>
+          <div className="pagination">
+            <button
+              className="button_pag"
+              onClick={handlePrevPage}
+              disabled={loading || currentPage === 1}
+            >
+              Назад
+            </button>
+            <button
+              className="button_pag"
+              onClick={handleNextPage}
+              disabled={loading || currentPage === totalPages}
+            >
+              Вперед
+            </button>
+          </div>
+
+        </>
+      )}
+    </div>
   );
 };
 

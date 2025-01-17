@@ -2,27 +2,27 @@
   "images": [
     {
       "index": 1,
-      "filename": "/src/assets/photo/Barnhouse1.jpg"
+      "filename": "/photo/Barnhouse1.jpg"
     },
     {
       "index": 2,
-      "filename": "/src/assets/photo/Barnhouse2.jpg"
+      "filename": "/photo/Barnhouse2.jpg"
     },
     {
       "index": 3,
-      "filename": "/src/assets/photo/Barnhouse3.jpg"
+      "filename": "/photo/Barnhouse3.jpg"
     },
     {
       "index": 4,
-      "filename": "/src/assets/photo/Barnhouse4.jpg"
+      "filename": "/photo/Barnhouse4.jpg"
     }
   ],
   "arrow": [
     {
-      "src": "/src/assets/photo/arrowleft.png"
+      "src": "/photo/arrowleft.png"
     },
     {
-      "src": "/src/assets/photo/arrowright.png"
+      "src": "/photo/arrowright.png"
     }
   ],
   "conditions": [

@@ -21,7 +21,7 @@ const FooterMap: React.FC<FooterMapProps> = ({
     const getCoordinates = async () => {
       try {
         const response = await fetch(
-          "https://geocode-maps.yandex.ru/1.x/?apikey=9328768f-f1e0-41e6-ae45-c661336cf15f&geocode=Москва&format=json"
+          "https://geocode-maps.yandex.ru/1.x/?apikey=9328768f-f1e0-41e6-ae45-c661336cf15f&geocode=Аэродромная улица, 47А, Самара&format=json"
         );
         const data = await response.json();
 

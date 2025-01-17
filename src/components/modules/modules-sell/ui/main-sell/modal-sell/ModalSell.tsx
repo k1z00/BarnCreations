@@ -2,13 +2,13 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../../../style/modal.scss";
-import {House}  from '../../../shared/types/types'
+import {HouseModal} from '../../../shared/types/types'
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  house: House;
+  house: HouseModal  ;
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
@@ -73,9 +73,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.name}
-              className={`input-modal ${
-                formik.touched.name && formik.errors.name ? "input-error" : ""
-              }`}
+              className={`input-modal ${formik.touched.name && formik.errors.name ? "input-error" : ""
+                }`}
               placeholder={
                 formik.touched.name && formik.errors.name
                   ? formik.errors.name
@@ -91,9 +90,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
-              className={`input-modal ${
-                formik.touched.email && formik.errors.email ? "input-error" : ""
-              }`}
+              className={`input-modal ${formik.touched.email && formik.errors.email ? "input-error" : ""
+                }`}
               placeholder={
                 formik.touched.email && formik.errors.email
                   ? formik.errors.email
@@ -108,11 +106,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.message}
-              className={`input-modal-message ${
-                formik.touched.message && formik.errors.message
-                  ? "input-error"
-                  : ""
-              }`}
+              className={`input-modal-message ${formik.touched.message && formik.errors.message
+                ? "input-error"
+                : ""
+                }`}
               placeholder={
                 formik.touched.message && formik.errors.message
                   ? formik.errors.message
@@ -121,15 +118,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
             />
           </div>
           <div className="form-button">
-          <button className="modal-button" type="submit">
-            Отправить заявку
-          </button>
-          <button className="modal-button" onClick={onClose}>
-            Закрыть
-          </button>
+            <button className="modal-button" type="submit">
+              Отправить заявку
+            </button>
+            <button className="modal-button" onClick={onClose}>
+              Закрыть
+            </button>
           </div>
 
-         
+
         </form>
       </div>
     </div>

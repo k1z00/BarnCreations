@@ -88,14 +88,14 @@ async function fetchHouses(page: number, filters: string) {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const response = await fetch(
-    `http://62.60.236.182:3000/house?_page=${page}&_per_page=6&${filters}`
+    `https://json-server.kvakushnik.ru/house?_page=${page}&_per_page=6&${filters}`
   );
 
   return await response.json();
 }
 
 async function fetchTotalHouses(filters: string) {
-  const response = await fetch(`http://62.60.236.182:3000/house?${filters}`)
+  const response = await fetch(`https://json-server.kvakushnik.ru/house?${filters}`)
   const data = await response.json()
   return data.length
 }

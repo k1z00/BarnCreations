@@ -11,8 +11,8 @@ const HeaderApp: React.FC = () => {
           <img className="item_img"  src={NavImgHeader} alt="" />
         </div>
         <div className="head_item_link">
-          <CustomLink className="link_Main" to="/">About</CustomLink>
-          <CustomLink className="link_Main" to="/sell">Sell</CustomLink>
+          <CustomLink className="link_Main" to="BarnCreations/">About</CustomLink>
+          <CustomLink className="link_Main" to="BarnCreations/sell">Sell</CustomLink>
         </div>
       </div>
     </header>

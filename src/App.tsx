@@ -18,10 +18,10 @@ const App: React.FC = () => {
       <HeaderApp />
       <Routes>
         <Route
-          path="/"
+          path="BarnCreations/"
           element={<AboutPage targetBlockRef={targetBlockRef} />}
         />
-        <Route path="/sell" element={<SellPage />} />
+        <Route path="BarnCreations/sell" element={<SellPage />} />
       </Routes>
       <FooterMain targetBlockRef={targetBlockRef} />
     </Router>

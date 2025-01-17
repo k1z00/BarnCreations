@@ -2,13 +2,13 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../../../style/modal.scss";
-import {HouseModal} from '../../../shared/types/types'
+import { HouseModal } from '../../../shared/types/types';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  house: HouseModal  ;
+  house: HouseModal;
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
@@ -47,6 +47,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
 
         if (response.ok) {
           alert("Заявка успешно отправлена!");
+          formik.resetForm(); 
           onClose();
         } else {
           alert("Ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.");
@@ -58,78 +59,88 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {
     },
   });
 
-  if (!isOpen) return null;
+  
+  const handleClose = () => {
+    formik.resetForm();
+    onClose(); 
+  };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2 className="modal-title">{title}</h2>
-        <form onSubmit={formik.handleSubmit}>
-          <div className="modal-item">
-            <label className="modal-lable">Имя</label>
-            <input
-              type="text"
-              name="name"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
-              className={`input-modal ${formik.touched.name && formik.errors.name ? "input-error" : ""
-                }`}
-              placeholder={
-                formik.touched.name && formik.errors.name
-                  ? formik.errors.name
-                  : "Ваше имя"
-              }
-            />
-          </div>
-          <div className="modal-item">
-            <label className="modal-lable">Email</label>
-            <input
-              type="email"
-              name="email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-              className={`input-modal ${formik.touched.email && formik.errors.email ? "input-error" : ""
-                }`}
-              placeholder={
-                formik.touched.email && formik.errors.email
-                  ? formik.errors.email
-                  : "Ваш email"
-              }
-            />
-          </div>
-          <div className="modal-item">
-            <label className="modal-lable">Сообщение</label>
-            <textarea
-              name="message"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.message}
-              className={`input-modal-message ${formik.touched.message && formik.errors.message
-                ? "input-error"
-                : ""
-                }`}
-              placeholder={
-                formik.touched.message && formik.errors.message
-                  ? formik.errors.message
-                  : "Ваше сообщение"
-              }
-            />
-          </div>
-          <div className="form-button">
-            <button className="modal-button" type="submit">
-              Отправить заявку
-            </button>
-            <button className="modal-button" onClick={onClose}>
-              Закрыть
-            </button>
-          </div>
+    <>
+      {isOpen && (
+        <div className="modal-overlay" onClick={handleClose}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2 className="modal-title">{title}</h2>
 
+            <form onSubmit={formik.handleSubmit}>
+              <div className="modal-item">
+                <label className="modal-lable">Имя</label>
+                <input
+                  type="text"
+                  name="name"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.name}
+                  className={`input-modal ${formik.touched.name && formik.errors.name ? "input-error" : ""
+                    }`}
+                  placeholder={
+                    formik.touched.name && formik.errors.name
+                      ? formik.errors.name
+                      : "Ваше имя"
+                  }
+                />
+              </div>
 
-        </form>
-      </div>
-    </div>
+              <div className="modal-item">
+                <label className="modal-lable">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
+                  className={`input-modal ${formik.touched.email && formik.errors.email ? "input-error" : ""
+                    }`}
+                  placeholder={
+                    formik.touched.email && formik.errors.email
+                      ? formik.errors.email
+                      : "Ваш email"
+                  }
+                />
+              </div>
+
+              <div className="modal-item">
+                <label className="modal-lable">Сообщение</label>
+                <textarea
+                  name="message"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.message}
+                  className={`input-modal-message ${formik.touched.message && formik.errors.message
+                      ? "input-error"
+                      : ""
+                    }`}
+                  placeholder={
+                    formik.touched.message && formik.errors.message
+                      ? formik.errors.message
+                      : "Ваше сообщение"
+                  }
+                />
+              </div>
+
+              <div className="form-button">
+                <button className="modal-button" type="submit">
+                  Отправить заявку
+                </button>
+                <button className="modal-button" type="button" onClick={handleClose}>
+                  Закрыть
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

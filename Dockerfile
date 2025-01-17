@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npx", "json-server", "db.json"]
+CMD ["npx", "json-server", "server/db.json"]

@@ -2,12 +2,13 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../../../style/modal.scss";
+import {House}  from '../../../shared/types/types'
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  house: any;
+  house: House;
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, house }) => {

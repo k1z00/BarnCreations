@@ -18,6 +18,9 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Filters from "../filter-mobail/FilterMobail"; // Импортируем новый компонент
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { House } from "../../../shared/types/types";
+
+
 
 const ProductSell: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -35,13 +38,12 @@ const ProductSell: React.FC = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedHouse, setSelectedHouse] = useState<any>(null);
+  const [selectedHouse, setSelectedHouse] = useState<House | null>();
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const isMobile = useMediaQuery("(max-width: 970px)");
 
   useEffect(() => {
-    // Восстановление фильтров из localStorage
     const currentPage = localStorage.getItem("currentPage");
     const priceRange = localStorage.getItem("priceRange");
     const floors = localStorage.getItem("floors");
@@ -56,7 +58,7 @@ const ProductSell: React.FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    // Получаем параметры из URL
+ 
     const page = Number(searchParams.get("page")) || 1;
     const priceRangeFromUrl: [number, number] = [
       Number(searchParams.get("price_gte")) || priceRange[0],
@@ -69,14 +71,14 @@ const ProductSell: React.FC = () => {
     ];
     const bedroomsFromUrl = Number(searchParams.get("bedrooms")) || bedrooms;
 
-    // Устанавливаем параметры в Redux
+    
     dispatch(setCurrentPage(page));
     dispatch(setPriceRange(priceRangeFromUrl));
     dispatch(setFloors(floorsFromUrl));
     dispatch(setArea(areaFromUrl));
     dispatch(setBedrooms(bedroomsFromUrl));
 
-    // Загружаем данные с учетом параметров
+  
     dispatch(
       fetchBarn({
         page,
@@ -89,7 +91,6 @@ const ProductSell: React.FC = () => {
   }, [dispatch, searchParams]);
 
   useEffect(() => {
-    // Обновляем URL при изменении параметров
     setSearchParams({
       page: currentPage.toString(),
       price_gte: priceRange[0].toString(),
@@ -113,7 +114,7 @@ const ProductSell: React.FC = () => {
     }
   };
 
-  const handleOpenModal = (house: any) => {
+  const handleOpenModal = (house: House | null) => {
     setSelectedHouse(house);
     setIsModalOpen(true);
   };

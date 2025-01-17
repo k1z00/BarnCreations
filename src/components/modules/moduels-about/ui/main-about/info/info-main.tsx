@@ -1,6 +1,6 @@
 import InfoApp from "./info-app";
 import '../../../style/info.scss'
-import InfoImg from '@assets/photo/karkasnyj-dom-barnhaus-scaled.webp'
+import InfoImg from '/photo/karkasnyj-dom-barnhaus-scaled.webp'
 ;
 
 

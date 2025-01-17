@@ -1,6 +1,6 @@
 import CustomLink from './custom-link';
 import "../../style/head.scss";
-import NavImgHeader from '@assets/photo/free-icon-tiny-house-4661011.png'
+import NavImgHeader from '/photo/free-icon-tiny-house-4661011.png'
 
 
 const HeaderApp: React.FC = () => {

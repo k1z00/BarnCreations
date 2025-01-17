@@ -1,50 +1,20 @@
-# React + TypeScript + Vite
+## Проект "BarnHouse"
+О проекте
+Проект "BarnHouse" предлагает уникальные дома в стиле Barn House (амбарный стиль), сочетающие в себе современный комфорт и эстетику сельского уюта. Наши дома — это идеальное решение для тех, кто ценит простоту, экологичность и стиль.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Наш сайт
+Посетите наш сайт, чтобы узнать больше:
+👉 https://k1z00.github.io/BarnCreations/
 
-Currently, two official plugins are available:
+## Особенности стиля Barn House
+Минимализм и функциональность: Чистые линии, открытые пространства и отсутствие лишних деталей.
+Натуральные материалы: Дерево, камень и металл создают атмосферу тепла и уюта.
+Большие окна: Обилие естественного света и связь с природой.
+Экологичность: Использование энергоэффективных технологий и экологически чистых материалов.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Преимущества наших домов
+Индивидуальный дизайн: Каждый дом проектируется с учётом пожеланий клиента.
+Качество строительства: Мы используем только проверенные материалы и технологии.
+Гибкие условия оплаты: Рассрочка, ипотека и другие удобные способы оплаты.
+Комплексное обслуживание: От проектирования до сдачи дома "под ключ".
